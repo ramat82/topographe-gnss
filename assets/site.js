@@ -14,7 +14,42 @@ viewer.addEventListener('click', (event) => {
   if (event.target === viewer) viewer.close();
 });
 
-// Compteur cumulatif des téléchargements APK depuis les Releases GitHub.
+// Mise à jour dynamique du site vers la dernière APK publiée.
+const latestVersion = '1.3.2.27';
+const latestApkUrl = 'https://github.com/ramat82/topographe-gnss/releases/download/V1.3.2.27/TOPOGRAHE_GNSS_1.3.2.27.apk';
+document.querySelectorAll('a[href*="releases/download/V1.3.2.26/"]').forEach((link) => {
+  link.href = latestApkUrl;
+  if (link.textContent.includes('1.3.2.26')) {
+    link.textContent = link.textContent.replace('1.3.2.26', latestVersion);
+  }
+});
+const installAside = document.querySelector('#installation aside');
+if (installAside) {
+  const strongs = installAside.querySelectorAll('strong');
+  if (strongs.length) strongs[0].textContent = latestVersion;
+}
+
+// Ajoute un compteur visible dans le bandeau d'informations principal.
+const facts = document.querySelector('.facts');
+if (facts && !facts.querySelector('[data-download-count]')) {
+  const item = document.createElement('span');
+  item.innerHTML = '<b data-download-count>…</b> téléchargements APK';
+  facts.appendChild(item);
+}
+
+// Ajoute aussi le compteur dans le bloc Installation.
+if (installAside && !installAside.querySelector('[data-download-count]')) {
+  const label = document.createElement('span');
+  label.textContent = 'Téléchargements cumulés';
+  const value = document.createElement('strong');
+  value.setAttribute('data-download-count', '');
+  value.textContent = '…';
+  const button = installAside.querySelector('a.button');
+  installAside.insertBefore(label, button);
+  installAside.insertBefore(value, button);
+}
+
+// Compteur cumulatif des téléchargements APK depuis toutes les Releases GitHub.
 // Le résultat est mis en cache 15 minutes dans le navigateur pour limiter les appels API.
 (async function loadDownloadCount() {
   const counters = document.querySelectorAll('[data-download-count]');
