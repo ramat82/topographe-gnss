@@ -2,54 +2,55 @@
 <html lang="fr">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CEY06H661M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CEY06H661M');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CEY06H661M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CEY06H661M');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TOPOGRAPHE GNSS — Application topographique Android</title>
-  <meta name="description" content="TOPOGRAPHE GNSS : levé, implantation, calculs topographiques, plans, DXF et scan sur Android. Développée par Amar Tabbi, Géomètre Expert Foncier n° 322.">
+  <title>NTRIP-RTK — NTRIP, GNSS Bridge et topographie Android</title>
+  <meta name="description" content="NTRIP-RTK : client NTRIP, profils caster, Bridge GNSS, prise en charge ProMark 500/800, levé, implantation, calculs topographiques, DXF et outils terrain sur Android. Développée par Amar Tabbi, Géomètre Expert Foncier n° 322.">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#accueil" aria-label="Accueil TOPOGRAPHE GNSS">
-      <span class="brand-mark">TG</span>
-      <span>TOPOGRAPHE <b>GNSS</b></span>
+    <a class="brand" href="#accueil" aria-label="Accueil NTRIP-RTK">
+      <span class="brand-mark">NR</span>
+      <span>NTRIP-<b>RTK</b></span>
     </a>
     <nav aria-label="Navigation principale">
-      <a href="#fonctions">Fonctions</a>
-      <a href="#workflow-dxf">Terrain → DXF</a>
+      <a href="#ntrip-bridge">NTRIP / Bridge</a>
+      <a href="#promark">ProMark 500/800</a>
+      <a href="#fonctions">Topographie</a>
       <a href="#captures">Captures</a>
       <a href="#installation">Installation</a>
     </nav>
-    <a class="button small" href="https://github.com/ramat82/topographe-gnss/releases/download/V1.3.2.30_52/TOPOGNSS_1.3.2.30_52.apk">Télécharger l’APK</a>
+    <a class="button small" href="https://github.com/ramat82/topographe-gnss/releases/download/V1.3.2.31-53/TOPO-RTK.apk">Télécharger l’APK</a>
   </header>
 
   <main>
     <section class="hero" id="accueil">
       <div class="hero-copy">
-        <p class="eyebrow">Application Android professionnelle</p>
-        <h1>Le terrain, les calculs et vos plans dans une seule application.</h1>
-        <p class="lead">TOPOGRAPHE GNSS accompagne le géomètre du levé jusqu’à l’implantation : mesures GNSS, calculs topo, plans, réseaux, DXF, scans et exports.</p>
+        <p class="eyebrow">Application Android NTRIP · RTK · Topographie</p>
+        <h1>Le NTRIP, le Bridge GNSS et vos outils topo dans une seule application.</h1>
+        <p class="lead"><strong>WorldGNSS évolue et devient NTRIP-RTK.</strong> L’application ajoute la gestion NTRIP, les profils caster et le Bridge GNSS tout en conservant les fonctions de levé, implantation, calcul, DXF, plans et exports.</p>
         <div class="hero-actions">
-          <a class="button" href="https://github.com/ramat82/topographe-gnss/releases/download/V1.3.2.30_52/TOPOGNSS_1.3.2.30_52.apk">↓ Télécharger la version 1.3.2.30</a>
-          <a class="button ghost" href="#captures">Voir les 27 captures</a>
+          <a class="button" href="https://github.com/ramat82/topographe-gnss/releases/download/V1.3.2.31-53/TOPO-RTK.apk">↓ Télécharger la version 1.3.2.31</a>
+          <a class="button ghost" href="#ntrip-bridge">Découvrir NTRIP / Bridge</a>
         </div>
         <div class="facts" aria-label="Informations principales">
-          <span><b>30 jours</b> d’essai du Mode Réel</span>
-          <span><b>5 000 DA</b> licence permanente</span>
+          <span><b>NTRIP</b> caster & profils</span>
+          <span><b>GNSS Bridge</b> corrections temps réel</span>
+          <span><b>ProMark 500 / 800</b> pris en charge</span>
           <span><b>FR · EN · AR</b> trois langues</span>
         </div>
       </div>
       <figure class="hero-device">
-        <img src="assets/screenshots/4f697371-f063-4c46-99c6-604ad709de47.jfif" alt="Écran de levé GNSS avec précision et bouton Mesurer">
-        <figcaption>Levé GNSS en conditions de terrain</figcaption>
+        <img src="assets/screenshots/4f697371-f063-4c46-99c6-604ad709de47.jfif" alt="Écran GNSS de NTRIP-RTK avec précision et mesure terrain">
+        <figcaption>NTRIP-RTK : connexion GNSS et travail de terrain</figcaption>
       </figure>
     </section>
 
@@ -61,19 +62,48 @@
       <div class="author-title">Géomètre Expert Foncier <b>n° 322</b></div>
     </section>
 
+    <section class="section" id="ntrip-bridge">
+      <div class="section-heading">
+        <p class="eyebrow">Nouveau cœur de communication GNSS</p>
+        <h2>NTRIP, Caster et Bridge GNSS</h2>
+        <p class="workflow-intro">NTRIP-RTK permet de préparer la connexion Internet de votre rover, de mémoriser vos casters et d’acheminer les corrections vers un récepteur GNSS compatible. L’objectif est de limiter les changements d’application sur le terrain et de garder les réglages utiles dans un même environnement.</p>
+      </div>
+      <div class="feature-grid">
+        <article><span>01</span><h3>Client NTRIP</h3><p>Renseignez l’adresse du caster, le port, le mountpoint et les identifiants afin de recevoir les corrections GNSS par Internet.</p></article>
+        <article><span>02</span><h3>Profils Caster</h3><p>Enregistrez vos configurations de connexion et rechargez-les rapidement pour passer d’un réseau ou d’un chantier à un autre.</p></article>
+        <article><span>03</span><h3>GNSS Bridge</h3><p>Le mode Bridge sert de passerelle entre la connexion NTRIP du téléphone et le récepteur GNSS, avec suivi de l’état de la liaison.</p></article>
+        <article><span>04</span><h3>Interface GNSS</h3><p>Accédez directement à l’interface du récepteur depuis l’écran Bridge. L’adresse IP et le port restent modifiables selon votre matériel.</p></article>
+        <article><span>05</span><h3>Paramètres persistants</h3><p>Les profils, adresses, ports et informations utiles sont conservés pour éviter de tout ressaisir à chaque retour sur l’écran.</p></article>
+        <article><span>06</span><h3>État visible</h3><p>Les boutons et états de connexion donnent un retour visuel clair afin de savoir immédiatement si le caster, le Bridge ou le GNSS sont actifs.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="promark">
+      <div class="section-heading">
+        <p class="eyebrow">Récepteurs historiques toujours utiles</p>
+        <h2>Prise en charge des ProMark 500 et ProMark 800</h2>
+        <p class="workflow-intro">NTRIP-RTK intègre un usage adapté aux <strong>ProMark 500</strong> et <strong>ProMark 800</strong>. Le téléphone peut assurer la connexion Internet moderne vers le caster pendant que le récepteur GNSS reste chargé de la mesure terrain. Cette approche permet notamment de continuer à exploiter ces matériels lorsque leur ancien accès cellulaire intégré n’est plus adapté aux réseaux actuels.</p>
+      </div>
+      <div class="feature-grid">
+        <article><span>PM500</span><h3>ProMark 500</h3><p>Connexion au récepteur, lecture NMEA et utilisation avec les fonctions NTRIP / Bridge de l’application selon la configuration du matériel.</p></article>
+        <article><span>PM800</span><h3>ProMark 800</h3><p>Le même principe permet d’utiliser le smartphone comme passerelle de données tout en conservant le ProMark 800 comme récepteur GNSS de terrain.</p></article>
+        <article><span>NMEA</span><h3>Trames complètes</h3><p>Pour une utilisation correcte, activez la sortie NMEA nécessaire sur le récepteur : GGA, GST, RMC, GSA, GSV, VTG… selon les informations souhaitées.</p></article>
+      </div>
+    </section>
+
     <section class="section" id="nmea-important" aria-label="Configuration NMEA obligatoire" style="padding-top:24px;padding-bottom:24px;">
       <div style="max-width:1100px;margin:0 auto;padding:24px 28px;border:3px solid #f59e0b;border-radius:18px;background:#fff7db;color:#6b3a00!important;box-shadow:0 10px 30px rgba(0,0,0,.08);">
         <h2 style="margin:0 0 12px;font-size:clamp(1.45rem,3vw,2.15rem);color:#6b3a00!important;">⚠ IMPORTANT — AVANT DE COMMENCER</h2>
-        <p style="margin:0 0 10px;font-size:clamp(1.05rem,2vw,1.3rem);line-height:1.55;color:#6b3a00!important;">Dans l’application de votre récepteur GNSS, activez <strong style="color:#6b3a00!important;">NMEA OUTPUT</strong> avec toutes les trames nécessaires.</p>
+        <p style="margin:0 0 10px;font-size:clamp(1.05rem,2vw,1.3rem);line-height:1.55;color:#6b3a00!important;">Dans l’application ou l’interface de votre récepteur GNSS, activez <strong style="color:#6b3a00!important;">NMEA OUTPUT</strong> avec toutes les trames nécessaires.</p>
         <p style="margin:8px 0 12px;font-size:clamp(1.15rem,2.2vw,1.45rem);font-weight:800;letter-spacing:.02em;color:#6b3a00!important;">(GGA, GST, RMC, GSA, GSV, VTG…)</p>
-        <p style="margin:0;font-size:clamp(1.05rem,2vw,1.3rem);line-height:1.55;color:#6b3a00!important;"><strong style="color:#6b3a00!important;">Sans cette activation, TOPOGRAPHE GNSS ne pourra pas recevoir correctement la position et les informations de précision.</strong></p>
+        <p style="margin:0;font-size:clamp(1.05rem,2vw,1.3rem);line-height:1.55;color:#6b3a00!important;"><strong style="color:#6b3a00!important;">Sans cette activation, NTRIP-RTK ne pourra pas recevoir correctement la position et les informations de précision du récepteur.</strong></p>
       </div>
     </section>
 
     <section class="section" id="fonctions">
       <div class="section-heading">
-        <p class="eyebrow">Un outil pensé pour le terrain</p>
-        <h2>Les fonctions essentielles du géomètre</h2>
+        <p class="eyebrow">Les fonctions topographiques sont conservées</p>
+        <h2>Du GNSS aux travaux de terrain</h2>
       </div>
       <div class="feature-grid">
         <article><span>01</span><h3>Levé GNSS</h3><p>Mesurez, nommez et classez les points avec l’état FIX, la précision et les coordonnées en temps réel.</p></article>
@@ -89,7 +119,7 @@
       <div class="section-heading">
         <p class="eyebrow">Du terrain au bureau</p>
         <h2>Du levé topographique au DXF exploitable</h2>
-        <p class="workflow-intro">TOPOGRAPHE GNSS assure une continuité simple entre les mesures réalisées sur le terrain et leur exploitation au bureau. Les points levés sont organisés sur le plan topographique, exportés au format DXF avec les paramètres du projet, puis ouverts dans AutoCAD pour le contrôle, le dessin et la livraison.</p>
+        <p class="workflow-intro">NTRIP-RTK assure une continuité simple entre les mesures réalisées sur le terrain et leur exploitation au bureau. Les points levés sont organisés sur le plan topographique, exportés au format DXF avec les paramètres du projet, puis ouverts dans AutoCAD pour le contrôle, le dessin et la livraison.</p>
       </div>
       <figure class="workflow-visual">
         <img loading="lazy" src="assets/du-leve-topo-au-dxf.jfif" alt="Processus en trois étapes : levé topographique sur le terrain, export du projet en DXF et ouverture du fichier dans AutoCAD">
@@ -104,8 +134,8 @@
 
     <section class="section gallery-section" id="captures">
       <div class="section-heading split">
-        <div><p class="eyebrow">Présentation complète</p><h2>Découvrez chaque écran</h2></div>
-        <p>Les 27 captures ci-dessous proviennent directement de l’application. Cliquez sur une image pour l’agrandir.</p>
+        <div><p class="eyebrow">Présentation des outils terrain</p><h2>Découvrez les écrans topographiques</h2></div>
+        <p>Les captures ci-dessous illustrent les fonctions de levé, implantation, calcul, objets terrain, recalage et export conservées dans NTRIP-RTK.</p>
       </div>
       <div class="gallery">
         <article><img loading="lazy" src="assets/screenshots/02eedf61-f947-47f6-831a-559c0995698f.jfif" alt="Symboles de chaussée et marquage"><div><b>Chaussée et marquage</b><p>Choix rapide des éléments de voirie : axe, bord, point haut ou bas, ligne jaune, zébra et passages.</p></div></article>
@@ -141,19 +171,24 @@
     <section class="section install" id="installation">
       <div>
         <p class="eyebrow">Installation directe</p>
-        <h2>Installez TOPOGRAPHE GNSS sur Android</h2>
-        <ol><li>Téléchargez l’APK Release depuis GitHub.</li><li>Ouvrez le fichier téléchargé sur votre téléphone.</li><li>Autorisez cette source si Android le demande.</li><li>Lancez l’application et choisissez votre langue.</li></ol>
+        <h2>Installez NTRIP-RTK sur Android</h2>
+        <ol>
+          <li>Téléchargez l’APK Release depuis GitHub.</li>
+          <li>Ouvrez le fichier téléchargé sur votre téléphone.</li>
+          <li>Autorisez cette source si Android le demande.</li>
+          <li>Lancez NTRIP-RTK et configurez votre GNSS, votre caster et votre profil de travail.</li>
+        </ol>
       </div>
       <aside>
-        <span>Version actuelle</span><strong>1.3.2.30 (code 52)</strong>
+        <span>Version actuelle</span><strong>1.3.2.31 (code 53)</strong>
         <span>Licence permanente</span><strong>5 000 DA</strong>
-        <a class="button" href="https://github.com/ramat82/topographe-gnss/releases/download/V1.3.2.30_52/TOPOGNSS_1.3.2.30_52.apk">↓ Télécharger l’APK</a>
+        <a class="button" href="https://github.com/ramat82/topographe-gnss/releases/download/V1.3.2.31-53/TOPO-RTK.apk">↓ Télécharger l’APK</a>
       </aside>
     </section>
   </main>
 
   <footer>
-    <div><strong>TOPOGRAPHE GNSS</strong><p>Application professionnelle pour les travaux topographiques GNSS.</p></div>
+    <div><strong>NTRIP-RTK</strong><p>NTRIP, GNSS Bridge et outils professionnels pour les travaux topographiques.</p></div>
     <div class="signature"><strong>Amar Tabbi</strong><span>Géomètre Expert Foncier n° 322</span></div>
     <div class="contact"><a href="https://wa.me/213656687312">WhatsApp : +213 656 68 73 12</a><a href="mailto:tabbiamar1963@gmail.com">tabbiamar1963@gmail.com</a></div>
   </footer>
