@@ -14,23 +14,33 @@ viewer.addEventListener('click', (event) => {
   if (event.target === viewer) viewer.close();
 });
 
-// Mise à jour dynamique du site vers la dernière APK publiée.
-const latestVersion = '1.3.2.27';
-const latestApkUrl = 'https://github.com/ramat82/topographe-gnss/releases/download/V1.3.2.27/TOPOGRAHE_GNSS_1.3.2.27.apk';
-document.querySelectorAll('a[href*="releases/download/V1.3.2.26/"]').forEach((link) => {
+// Version publique actuellement publiée sur GitHub.
+const latestVersion = '1.3.2.38';
+const latestCode = 60;
+const latestApkUrl = 'https://github.com/ramat82/topographe-gnss/releases/download/v1.3.2.38/TOPOGNSS60.apk';
+
+// Tous les boutons de téléchargement du site pointent vers la v60.
+document.querySelectorAll('a[href*="github.com/ramat82/topographe-gnss/releases/download/"]').forEach((link) => {
   link.href = latestApkUrl;
-  if (link.textContent.includes('1.3.2.26')) {
-    link.textContent = link.textContent.replace('1.3.2.26', latestVersion);
-  }
+  link.textContent = link.textContent.replace(/1\.3\.2\.\d+/g, latestVersion);
 });
+
 const installAside = document.querySelector('#installation aside');
 if (installAside) {
   const strongs = installAside.querySelectorAll('strong');
-  if (strongs.length) strongs[0].textContent = latestVersion;
+  if (strongs.length) strongs[0].textContent = `${latestVersion} (code ${latestCode})`;
+}
+
+// Met en avant la principale amélioration de la version 60.
+const facts = document.querySelector('.facts');
+if (facts && !facts.querySelector('[data-release-highlight]')) {
+  const item = document.createElement('span');
+  item.setAttribute('data-release-highlight', '');
+  item.innerHTML = '<b>v60</b> levés plus rapides';
+  facts.appendChild(item);
 }
 
 // Ajoute un compteur visible dans le bandeau d'informations principal.
-const facts = document.querySelector('.facts');
 if (facts && !facts.querySelector('[data-download-count]')) {
   const item = document.createElement('span');
   item.innerHTML = '<b data-download-count>…</b> téléchargements APK';
