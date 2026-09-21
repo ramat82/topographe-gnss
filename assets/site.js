@@ -15,11 +15,11 @@ viewer.addEventListener('click', (event) => {
 });
 
 // Version publique actuellement publiée sur GitHub.
-const latestVersion = '1.3.2.38';
-const latestCode = 60;
-const latestApkUrl = 'https://github.com/ramat82/topographe-gnss/releases/download/v1.3.2.38/TOPOGNSS60.apk';
+const latestVersion = '1.3.2.39';
+const latestCode = 61;
+const latestApkUrl = 'https://github.com/ramat82/topographe-gnss/releases/download/Version1.3.2.39-C61/TOPOGNSS61.apk';
 
-// Tous les boutons de téléchargement du site pointent vers la v60.
+// Tous les boutons de téléchargement du site pointent vers la v61.
 document.querySelectorAll('a[href*="github.com/ramat82/topographe-gnss/releases/download/"]').forEach((link) => {
   link.href = latestApkUrl;
   link.textContent = link.textContent.replace(/1\.3\.2\.\d+/g, latestVersion);
@@ -31,12 +31,12 @@ if (installAside) {
   if (strongs.length) strongs[0].textContent = `${latestVersion} (code ${latestCode})`;
 }
 
-// Met en avant la principale amélioration de la version 60.
+// Met en avant la principale amélioration de la version 61.
 const facts = document.querySelector('.facts');
 if (facts && !facts.querySelector('[data-release-highlight]')) {
   const item = document.createElement('span');
   item.setAttribute('data-release-highlight', '');
-  item.innerHTML = '<b>v60</b> levés plus rapides';
+  item.innerHTML = '<b>v61</b> profils couleur & stabilité';
   facts.appendChild(item);
 }
 
