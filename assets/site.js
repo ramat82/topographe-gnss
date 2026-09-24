@@ -15,11 +15,11 @@ viewer.addEventListener('click', (event) => {
 });
 
 // Version publique actuellement publiée sur GitHub.
-const latestVersion = '1.3.2.40';
-const latestCode = 62;
-const latestApkUrl = 'https://github.com/ramat82/topographe-gnss/releases/download/V62_1.3.2.40_/app-release.apk';
+const latestVersion = '1.3.2.41';
+const latestCode = 63;
+const latestApkUrl = 'https://github.com/ramat82/topographe-gnss/releases/download/versionName1.3.2.41code63/app-release.apk';
 
-// Tous les boutons de téléchargement du site pointent vers la v62.
+// Tous les boutons de téléchargement du site pointent vers la v63.
 document.querySelectorAll('a[href*="github.com/ramat82/topographe-gnss/releases/download/"]').forEach((link) => {
   link.href = latestApkUrl;
   link.textContent = link.textContent.replace(/1\.3\.2\.\d+/g, latestVersion);
@@ -31,12 +31,12 @@ if (installAside) {
   if (strongs.length) strongs[0].textContent = `${latestVersion} (code ${latestCode})`;
 }
 
-// Met en avant la principale amélioration de la version 62.
+// Met en avant la principale amélioration de la version 63.
 const facts = document.querySelector('.facts');
 if (facts && !facts.querySelector('[data-release-highlight]')) {
   const item = document.createElement('span');
   item.setAttribute('data-release-highlight', '');
-  item.innerHTML = '<b>v62</b> contraste & lisibilité';
+  item.innerHTML = '<b>v63</b> levé & superficie améliorés';
   facts.appendChild(item);
 }
 
