@@ -15,11 +15,11 @@ viewer.addEventListener('click', (event) => {
 });
 
 // Version publique actuellement publiée sur GitHub.
-const latestVersion = '1.3.2.41';
-const latestCode = 63;
-const latestApkUrl = 'https://github.com/ramat82/topographe-gnss/releases/download/versionName1.3.2.41code63/app-release.apk';
+const latestVersion = '1.3.2.42';
+const latestCode = 64;
+const latestApkUrl = 'https://github.com/ramat82/topographe-gnss/releases/download/V1.3.2.42/TOPOGNSS64.apk';
 
-// Tous les boutons de téléchargement du site pointent vers la v63.
+// Tous les boutons de téléchargement du site pointent vers la v64.
 document.querySelectorAll('a[href*="github.com/ramat82/topographe-gnss/releases/download/"]').forEach((link) => {
   link.href = latestApkUrl;
   link.textContent = link.textContent.replace(/1\.3\.2\.\d+/g, latestVersion);
@@ -31,12 +31,12 @@ if (installAside) {
   if (strongs.length) strongs[0].textContent = `${latestVersion} (code ${latestCode})`;
 }
 
-// Met en avant la principale amélioration de la version 63.
+// Met en avant la principale amélioration de la version 64.
 const facts = document.querySelector('.facts');
 if (facts && !facts.querySelector('[data-release-highlight]')) {
   const item = document.createElement('span');
   item.setAttribute('data-release-highlight', '');
-  item.innerHTML = '<b>v63</b> levé & superficie améliorés';
+  item.innerHTML = '<b>v64</b> ProMark 500/800 SIM & Sans SIM';
   facts.appendChild(item);
 }
 
