@@ -15,11 +15,11 @@ viewer.addEventListener('click', (event) => {
 });
 
 // Version publique actuellement publiée sur GitHub.
-const latestVersion = '1.3.2.46';
-const latestCode = 68;
-const latestApkUrl = 'https://github.com/ramat82/topographe-gnss/releases/download/1.3.2.46v68/TOPOGNSS-V68.apk';
+const latestVersion = '1.3.2.48';
+const latestCode = 70;
+const latestApkUrl = 'https://github.com/ramat82/topographe-gnss/releases/download/VERSION70/TOPOGNSS70.apk';
 
-// Tous les boutons de téléchargement du site pointent vers la v68.
+// Tous les boutons de téléchargement du site pointent vers la v70.
 document.querySelectorAll('a[href*="github.com/ramat82/topographe-gnss/releases/download/"]').forEach((link) => {
   link.href = latestApkUrl;
   link.textContent = link.textContent.replace(/1\.3\.2\.\d+/g, latestVersion);
@@ -36,7 +36,7 @@ const facts = document.querySelector('.facts');
 if (facts && !facts.querySelector('[data-release-highlight]')) {
   const item = document.createElement('span');
   item.setAttribute('data-release-highlight', '');
-  item.innerHTML = '<b>v68</b> navigation implantation guidée corrigée';
+  item.innerHTML = '<b>v70</b> démarrage Simulation accéléré';
   facts.appendChild(item);
 }
 
