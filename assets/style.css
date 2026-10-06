@@ -7,3 +7,54 @@
 .workflow-intro{color:var(--muted);font-size:1.08rem}.workflow-visual{margin:0;overflow:hidden;background:#f4fbff;border:1px solid #477565;border-radius:24px;box-shadow:0 24px 70px rgba(0,0,0,.28)}.workflow-visual img{width:100%;height:auto}.workflow-visual figcaption{padding:15px 20px;background:var(--surface2);color:var(--muted);text-align:center}.workflow-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}.workflow-steps article{padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:18px}.workflow-steps span{color:var(--cyan);font-weight:800}.workflow-steps h3{margin:12px 0 5px}.workflow-steps p{margin:0;color:var(--muted)}
 #nmea-important p,#nmea-important p strong{color:#2b2112!important}
 @media(max-width:1000px){.workflow-steps{grid-template-columns:1fr}}
+
+
+/* Cartes achat / téléchargement : haut, milieu et bas */
+.purchase-card-zone{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:34px 24px 10px;
+  display:flex;
+  justify-content:center;
+}
+.purchase-card{
+  width:min(100%,340px);
+  display:grid;
+  gap:5px;
+  padding:30px;
+  border:1px solid #3a6958;
+  background:linear-gradient(180deg,#0f2a20 0%,#0b231b 100%);
+  border-radius:22px;
+  box-shadow:0 18px 45px rgba(0,0,0,.28);
+}
+.purchase-card span{
+  color:var(--muted);
+  margin-top:8px;
+}
+.purchase-card strong{
+  font-size:1.65rem;
+  color:var(--text);
+}
+.purchase-card .purchase-price{
+  font-size:2rem;
+  line-height:1.1;
+}
+.purchase-card a:not(.button){
+  color:var(--text);
+  overflow-wrap:anywhere;
+}
+.purchase-card a:not(.button):hover{
+  color:var(--cyan);
+}
+.purchase-card .button{
+  margin-top:20px;
+}
+.install aside.purchase-card{
+  width:100%;
+  max-width:340px;
+  justify-self:center;
+}
+@media(max-width:700px){
+  .purchase-card-zone{padding:24px 16px 4px}
+  .purchase-card{padding:24px}
+}
