@@ -15,11 +15,11 @@ viewer.addEventListener('click', (event) => {
 });
 
 // Version publique actuellement publiée sur GitHub.
-const latestVersion = '1.3.2.48';
-const latestCode = 70;
-const latestApkUrl = 'https://github.com/ramat82/topographe-gnss/releases/download/VERSION70/TOPOGNSS70.apk';
+const latestVersion = '1.3.2.49';
+const latestCode = 71;
+const latestApkUrl = 'https://github.com/ramat82/topographe-gnss/releases/download/VERSION71/TOPOGNSS-71.apk';
 
-// Tous les boutons de téléchargement du site pointent vers la v70.
+// Tous les boutons de téléchargement du site pointent vers la v71.
 document.querySelectorAll('a[href*="github.com/ramat82/topographe-gnss/releases/download/"]').forEach((link) => {
   link.href = latestApkUrl;
   link.textContent = link.textContent.replace(/1\.3\.2\.\d+/g, latestVersion);
@@ -36,7 +36,7 @@ const facts = document.querySelector('.facts');
 if (facts && !facts.querySelector('[data-release-highlight]')) {
   const item = document.createElement('span');
   item.setAttribute('data-release-highlight', '');
-  item.innerHTML = '<b>v70</b> démarrage Simulation accéléré';
+  item.innerHTML = '<b>v71</b> connexions GNSS / NTRIP renforcées';
   facts.appendChild(item);
 }
 
